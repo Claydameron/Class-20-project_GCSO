@@ -9,6 +9,7 @@ function setup() {
   car.shapeColor = "purple";
   car.setCollider("rectangle",20,1,15,15,0);
   wall = createSprite(1500,200,60,height/2);
+  wall.shapeColor = "white";
 
   speed = random(20,70);
   weight = random(300,1400);
@@ -18,6 +19,7 @@ function setup() {
 
 function draw() {
   background(0);
+  textSize(18);
 
   car.velocityX = speed;
 
@@ -28,26 +30,26 @@ function draw() {
 
   if(deformation > 180) {
     fill("red");
-    text("LETHAL!",350,50);
-    text("NO",570,50);
+    text("LETHAL!",380,50);
+    text("NO",640,50);
     car.shapeColor = "red";
   }  else if(deformation <= 180 && deformation > 80) {
     fill("yellow");
-    text("AVERAGE",355,50);
+    text("AVERAGE",385,50);
     fill("green");
-    text("YES",572,50);
+    text("YES",642,50);
     car.shapeColor = "yellow";
   } else if(deformation <= 80 && deformation > 0) {
     fill("green");
-    text("GOOD!",349,50);
-    text("YES",572,50);
+    text("GOOD!",379,50);
+    text("YES",642,50);
     car.shapeColor = "green";
   }
 
   drawSprites();
   fill("lightBlue");
   text("Deformation = " + deformation,100,50);
-  text("Good to go - ",500,50);
+  text("Good to go - ",530,50);
 
   fill("orange");
   text("State = ",300,50);
